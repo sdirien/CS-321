@@ -1,0 +1,130 @@
+
+h1{
+  color:#bcd2d0;
+  text-align:center;
+  font-family:Ruthie-Regular;
+  font-size:100px;
+  margin-bottom:0px;
+  margin-top:0px;
+  background-color:#d0b783;
+  text-shadow:2px 2px #4b5453;
+}
+
+h2{
+  font-family:OpenSans-Regular;
+  font-size:20px;
+  margin-top:0px;
+  margin-bottom:0px;
+  background-color:#e1e9b7;
+  text-align:center;
+}
+
+body{
+  background-color:#e4edec;
+}
+
+.landingBox{
+  background: url(cookies.jpg);
+  border: 2px solid black;
+  background-size: cover;
+  margin: 50px;
+}
+
+.transbox {
+  margin: 6px;
+  background-color: #ffffff;
+  background-size: 30%;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.transbox h1{
+  margin:2%;
+  font-weight:bold;
+  color: #000000;
+  font-size: 50px;
+}
+
+@font-face{
+  font-family:'Ruthie-Regular';
+  src:url(Ruthie-Regular.ttf);
+}
+
+@font-face{
+  font-family:'OpenSans-Regular';
+  src:url(OpenSans-Regular.ttf);
+}
+
+/* Learned how to use a drop-down from this site */
+/* https://www.w3schools.com/css/css_dropdowns.asp */
+.navbar {
+  overflow: hidden;
+  background-color: #e1e9b7;
+  font-family: OpenSans-Regular;
+  border-color:#000000;
+  border-top-width:5px
+  border-style:solid;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #cad1a4;
+  padding-top:0px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #d0b783;
+  min-width: 160px;
+
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #a69268;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.link { 
+  color:#000000;
+} 
+
+.link:hover { 
+  color: #4b5453; 
+} 
