@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>RainyDayBakes</title>
+  
+  <!--  Styles  -->
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+  <h1 class="h1">RainyDayBakes</h1>
+  <h2 class="h2">Fresh bakes on rainy days to make the heart smile &#9829</h2>
+
+  <div class="navbar">
+   <a href="index.html" class="link">Home</a>
+   <a href="page1.html" class="link">About</a>
+   <a href="page2.html" class="link">Gallery</a>
+    <div class="dropdown">
+     <button class="dropbtn">See More
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+       <a href="page3.html">Products</a>
+        <a href="page4.html">Order Now</a>
+       <a href="page5.html">Connect</a>
+     </div>
+    </div>
+  </div>
+
+  <h3>Connect With Us!</h3>
+  <p>Got questions? We got answers. Leave your name, email and phone number below
+    and we'll get back to you ASAP. Or, feel free to call us at 123-456-7890 during
+  our regular business hours.</p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $("document").ready(function(){
+      console.log("Loaded");
+      $("#submit").click(function(){
+        checkName($('#name').val());
+        checkEmail($('#email').val());
+        checkPhone($('#phone').val());
+        checkRegarding();
+        checkContactee();
+      });
+
+
+    $("#name").keyup(function(){
+      console.log("Something in name changed");
+      checkName($('#name').val());
+    });
+
+    $("#email").keyup(function(){
+      console.log("Something in email changed");
+      checkEmail($('#email').val());
+    });
+
+    $("#phone").keyup(function(){
+      console.log("Something in phone changed")
+      checkPhone($('#phone').val());
+    });
+
+    $("#regarding").change(function(){
+      console.log("Something in regarding changed");
+      checkRegarding();
+    });
+
+    $("#contactee").change(function(){
+      console.log("Something in contactee changed");
+      checkContactee();
+    });
+
+    });
+
+    function checkName(inputtxt){
+
+      var nameno = /^[A-Za-z]+$/;
+      if($.trim($("#name").val())==""){
+        $("#errorname").html("<p>You missed your name</p>");
+        $("#errorname").addClass("showerror");
+      }
+      else if ((inputtxt.match(nameno))==false || inputtxt.length<2){          
+        $("#errorname").html("<p>Please enter your full name</p>");
+        $("#errorname").addClass("showerror");
+      }
+      else{
+        $("#errorname").html("");
+        $("#errorname").removeClass("showerror");
+      }
+    }
+
+    function checkPhone(inputtxt){
+
+      var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      if($.trim($("#phone").val())==""){          
+        $("#errorphone").html("<p>You missed your phone number</p>");
+        $("#errorphone").addClass("showerror");
+      }
+      else if((inputtxt.match(phoneno))==false || inputtxt.length < 12){          
+        $("#errorphone").html("<p>Please enter your number in the format 000-000-0000</p>");
+        $("#errorphone").addClass("showerror");
+      }
+      else{       
+        $("#errorphone").html("");
+        $("#errorphone").removeClass("showerror");
+      }
+    }
+
+    function checkEmail(inputtxt){
+      var emailno = /^[A-Za-z]*\@[A-Za-z]*.[A-Za-z]{3}$/;
+      if($.trim($("#email").val())==""){
+        $("#erroremail").html("<p>You missed your email</p>");
+        $("#erroremail").addClass("showerror");
+      }
+      else if((inputtxt.match(emailno))==false || inputtxt.length < 10){          
+        $("#erroremail").html("<p>Please enter your email in the format xxx@xxx.xxx</p>");
+        $("#erroremail").addClass("showerror");
+      }
+      else{
+        $("#erroremail").html("");
+        $("#erroremail").removeClass("showerror");
+      }
+    }
+
+    function checkRegarding(){
+      var e = document.getElementById("regarding");
+      var result = e.options[e.selectedIndex].value;
+      if(result != 1 && result != 2 && result != 3 && result != 4 && result != 5){
+        $("#errorregarding").html("<p>You missed this field</p>");
+        $("#errorregarding").addClass("showerror");
+      }
+      else{
+        $("#errorregarding").html("");
+        $("#errorregarding").removeClass("showerror");
+      }
+    }
+
+
+
+    function checkContactee(){
+      //var e = document.getElementById("checkbox");
+      //var result = e.options[e.selectedIndex].value;
+      if(!form.type1.checked){
+        $("#errorcheckbox").html("<p>You missed this field</p>");
+        $("#errorcheckbox").addClass("showerror");
+      }
+      else{
+        $("#errorregarding").html("");
+       $("#errorregarding").removeClass("showerror");
+      }
+    }
+
+function displayQuestion(answer) {
+
+  document.getElementById(answer + 'Question').style.display = "block";
+
+  if (answer == "yes") { // hide the div that is not selected
+
+    document.getElementById('noQuestion').style.display = "none";
+
+  }
+
+}
+
+function checkvalue(val){
+{
+    if(val=="other")
+       document.getElementById('other').style.display='block';
+    else
+       document.getElementById('other').style.display='none'; 
+}}
+
+  </script>
+
+  <form action="javascript:void(0)" method="POST" >
+    <div class="contactForm">
+      <label for="name">Name*: </label>
+      <div id="errorname" class="error"></div>
+      <input type="text" name="name" id="name" minlength="2" required>
+    </div>
+
+    <div class="contactForm">
+      <label for="phone">Phone: </label>
+      <div id="errorphone" class="error"></div>
+      <input type="phone" name="phone" id="phone" placeholder="000-000-0000" required>
+    </div>
+
+    <div class="contactForm">
+      <label for="email">Email*: </label>
+      <div id="erroremail" class="error"></div>
+      <input type="email" name="email" id="email" placeholder="janedoe@email.com" required>
+    </div>
+
+    <br>
+
+    <div class="contactForm">
+      <label for="checkbox" id="checkbox" name="checkbox">Contactee Type: </label><br>
+      <div id="errorcheckbox" class="error"></div>
+      <input type="checkbox" id="checkbox" name="type1" value="1" checked>Individual<br>
+      <input type="checkbox" id= "checkbox" name="type2" value="2">Business:Catering<br>
+      <input type="checkbox" id="checkbox" name="type3" value="3">Business:Partner<br>
+    </div>
+
+
+    <p>What are you contacting regarding?</p>
+    <div class="contactForm">
+      <div id="errorregarding" class="error"></div>
+      <select id="regarding">
+        <option value="0"></option>
+        <option value="1">Wholesale Ordering</option>
+        <option value="2">Catering</option>
+        <option value="3">Wedding Ordering</option>
+        <option value="4">Special Item Request</option>
+        <option value="5">Other</option>
+      </select>
+    </div>
+
+    <div class="contactForm">
+      <p>Let us know how we can help!*</p>
+      <textarea name="message" rows="10" cols="30" required></textarea>
+      <br>
+      <div id="errordescrip" class="error"></div>
+    </div>
+
+      <fieldset>
+        <legend>Have you ordered with us before?</legend>
+      <label>
+    <input type="radio" id="yes" name="yesOrNo" value="yes" onchange="displayQuestion(this.value)" />Yes</label>
+    <label>
+    <input type="radio" id="no" name="yesOrNo" value="no" onchange="displayQuestion(this.value)" />No</label>
+
+
+  <div id="noQuestion" style="display:none;"><br/>
+    How did you hear about us?
+      <select id="hearabout">
+        <option value="Online" >Online Ad</option>
+        <option value="Billboard">Billboard Ad</option>
+        <option value="Walk">Walk-By</option>
+        <option value="Friend">Friend</option>
+        <option value="other" onchange="checkvalue(this.value)">Other</option>
+      </select>
+  </div>
+
+      <div id="other" style="display:none;"><input type="text" name="other" id="other"/></div>
+
+    <div class="button"><input type="button" name="submit" id="submit" value="Submit"></div>
+</fieldset>
+
+  </form>
+    <!-- Scripts 
+  <script src="scripts/main.js"></script> -->
+</body>
+</html>
