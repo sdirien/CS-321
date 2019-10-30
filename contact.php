@@ -110,8 +110,7 @@ function validateTextarea($message, $submit){
   }
 }
 
-if(isset($_POST['submit'])){
-  header("Location:confirmed.php");}
+
 
 ?>
 
