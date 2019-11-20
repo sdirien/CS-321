@@ -1,8 +1,3 @@
-<div name="Banner">
-    <h1 class="h1">RainyDayBakes</h1>
-    <h2 class="h2">Fresh bakes on rainy days to make the heart smile &#9829</h2>
-  </div>
-
   <nav>
       <div class="navbar">
         <a href="index.php" class="link">Home</a>
@@ -15,8 +10,22 @@
         <div class="dropdown-content">
           <a href="page3.php">Products</a>
           <a href="page4.php">Order Now</a>
-          <a href="page5.php">Connect</a>
+          <a href="contact.php">Connect</a>
         </div>
+        </div>
+        <div class="titlebar">
+          <p style="text-align:right; font-family:'Ruthie-Regular';">RainyDayBakes </p>
         </div>
       </div>
+
   </nav>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152521615-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152521615-1');
+</script>
