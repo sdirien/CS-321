@@ -1,8 +1,6 @@
 <div class="footer" id="footer">
     <div class="footerleft">
     <div id="links">
-        <a href="">Careers</a>
-        <a href="">Partners</a>
         <a href="contact.php">Contact</a>
     </div>
     <br><br>
