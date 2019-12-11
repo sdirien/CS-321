@@ -14,30 +14,12 @@
 
 <body>
 
-<?php
-  $validation_error = "";
-  $user_url = "";
-  $form_message = "";
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST"){
-	  $user_url = $_POST["email"];
-	  if (!filter_var($user_url, FILTER_VALIDATE_EMAIL)) {
-      $validation_error = "* This is an invalid URL.";
-      $form_message = "Please retry and submit your form again.";
-    } else {
-      $form_message = "Thank you for your submission.";
-    }  
-  }  
-
-?>
-
   <h3>Order Online</h3>
 
-  <form id="orderForm" action="" method="POST">
+  <form id="orderForm" action="confirmed.php" method="POST">
   <div id="name">
     <label for="name">Name: </label>
     <input type="name" id="name" required>
-    <span class="error"><?= $validation_error;?></span>
   </div>
 
   <br>
@@ -45,10 +27,22 @@
   <div id="email">
     <label for="email">Email: </label>
     <input type="email" id="email" required>
-    <span class="error"><?= $validation_error;?></span>
   </div>
 
   <br>
+
+  <div id="phone">
+    <label for="phone">Phone: </label>
+    <input type="phone" id="phone" required>
+  </div>
+
+  <br>
+
+  <div id="pickup">
+    <label for="pickup">Pickup Date*: </label>
+    <input type="textarea" id="pickup" required>
+    <p>*We do not offer delivery at this time. To place a catering order, please contact us on our contact page.</p>
+  </div>
 
   <div id="item">
     <label for="checkbox" id="checkbox" name="checkbox">What are you ordering?: </label><br>
@@ -64,11 +58,14 @@
   </div>
 
   <br>
-  <div class="button"><input type="button" name="submit" id="submit" value="Submit"></div>
+  <div class="button"><input type="submit" name="submit" id="submit" value="Submit"></div>
   </form>
+  <br>
 
-  <p> <?= $form_message;?> </p> 
   <!-- Scripts -->
   <script src="scripts/main.js"></script>
 </body>
+<footer>
+  <?php include 'footer.php'?>
+</footer>
 </html>

@@ -2,7 +2,6 @@
       <div class="navbar">
         <a href="index.php" class="link">Home</a>
         <a href="page1.php" class="link">About</a>
-        <a href="page2.php" class="link">Gallery</a>
         <div class="dropdown">
           <button class="dropbtn">See More
             <i class="fa fa-caret-down"></i>

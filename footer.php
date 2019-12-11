@@ -13,9 +13,9 @@
 <div class="footerright">
     <div id="media">
         <p>Follow us
-        <a href="twitter.com" target="_blank"><img src="twitter.png" style="width:20px; height:20px;" alt="twitter logo"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="twitter.png" style="width:20px; height:20px;" alt="twitter logo"></a>
         <a href="https://www.instagram.com/rainydaybakes/" target="_blank"><img src="instagram.png" style="width:20px; height:20px;" alt="instagram logo"></a>
-        <a href="facebook.com" target="_blank"><img src="facebook.png" style="width:20px; height:20px;" alt="facebook logo"></a></p>
+        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" style="width:20px; height:20px;" alt="facebook logo"></a></p>
     </div>
     <div id="credits">
         <p>Social media icons by <a href="https://www.flaticon.com/authors/freepik">Freepik</a></p>

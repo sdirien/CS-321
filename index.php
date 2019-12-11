@@ -26,24 +26,62 @@
   </div>
 
   <div id="news" class="columnright">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="news">
+      <h3>News and Updates</h3>
+      <div id="newsitem" class="newsitem">
+        <div class="newsheader">
+          <div class="columnright">
+            <h4>Holiday Pie Sales</h4>
+          </div>
+          <div  class="columnleft">
+            <br/>
+            <p>11/10/19</p>
+            <p>Jane Doe</p>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+        <div id="newsinfo" class="center">
+          <p>Today we have launched our preorders for our holiday pies! Holiday pies can be preordered for pick-up Wednesday, November 27th online or in-store starting at $16.99 for a personal pie. Family style pies start at $25.99. Tax not included.</p>
+          <p>Flavors include pumpkin, pecan, French silk and apple, and we will be offering a wide variety of sizes including, but not limited to, personal, small, large and mini.</p>
+          <p>Please click <a href="blank.com">here</a> to order online!</p>
+          <p>The deadline to order a pie is Monday, November 18th; we will however have pies available for pick-up in store Wednesday, November 27th if you forget!</p>
+        </div>
+      </div>
+      <div id="newsitem" class="newsitem">
+        <div class="newsheader">
+          <div class="columnright">
+            <h4>Showcasing Pumpkin Spice</h4>
+          </div>
+          <div  class="columnleft">
+            <br/>
+            <p>10/15/19</p>
+            <p>Jane Doe</p>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+        <div id="newsinfo" class="center">
+          <p>It's fall. You know what that means!</p>
+          <p>It's pumpkin spice season! RainyDayBakes is celebrating fall with a new collection of pumpkin spice infused bakes, alongside the return of our seasonal bestsellers.</p>
+          <p>Returning are classics like our pumpkin spice latte, pumpkin spice sugar cookie and our pumpkin spice whoopee pies!</p>
+          <p>New to the menu are delicious pumpkin spice frappes, pumpkin spice fudge and pumpkin spice bread!</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div id="events" class="columnleft">
     <?php
 
     require "mywebsql.connect.php";
-    //require "mysqli_connect.php";
 
     $query = ("Select * from images");
-    //echo $query;
+
     $array = array();
-    //echo $query;
+
     $result = $dbc->query($query);
-    //echo $result;
+
 
     if ($result->num_rows > 0){
       while($row = $result->fetch_assoc()){
-        //echo "id: " .$row["imageID"]. " - link: " .$row["imageLink"];
         $id = $row["imageID"];
         $link = $row["imageLink"];
         $array[$id] = $link;
@@ -53,7 +91,6 @@
     }
 
     $randint = rand(1,4);
-    //echo $randint;
 
     $link = $array[$randint];
     
